@@ -1,0 +1,27 @@
+{
+  "name": "order-pipeline",
+  "version": "1.0.0",
+  "description": "Order Lifecycle Progress Pipeline — pure backend state machine",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types":  "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test":  "node --experimental-vm-modules --import tsx/esm src/stateMachine.test.ts",
+    "dev":   "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.43.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx":         "^4.15.0",
+    "typescript":  "^5.5.0"
+  }
+}
