@@ -1,14 +1,14 @@
-{
-  "compilerOptions": {
-    "target": "es2022",
-    "module": "commonjs",
-    "lib": ["es2022"],
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "outDir": "./dist"
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: false,
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://rhclothing-v1.vercel.app/api/:path*',
+      },
+    ];
   },
-  "include": ["src/**/*"]
-}
+};
+
+export default nextConfig;
